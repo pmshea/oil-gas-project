@@ -51,12 +51,8 @@ def parsePrice():
 
 thirty_days_of_prices = pd.DataFrame(columns = ['Time', 'OGZPY', 'XOM', 'PTR', 'RDS-A', 'BP', 'CVX', 'TOT', 'EQNR', 'COP', 'E'])
 
-#will this while loop write the dataframes to csvs stored in my beanstalk environment?
-
-while True:
+def data_table_builder():
     thirty_days_of_prices = thirty_days_of_prices.append(parsePrice())
-    time.sleep(60)
-    print(thirty_days_of_prices)
     thirty_days_of_prices.to_csv('price_data.csv')
     gazprom_data = thirty_days_of_prices[['Time', 'OGZPY']].dropna()
     gazprom_data.to_csv('gazprom_data.csv')
@@ -80,6 +76,8 @@ while True:
     eni_data.to_csv('eni_data.csv')
 
 
+data_table_builder()    
+  
 # In[ ]:
 
 
