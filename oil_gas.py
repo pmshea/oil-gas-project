@@ -22,7 +22,7 @@ import dash_html_components as html
 # In[ ]:
 
 
-#builds scraping function and live dataframe
+#builds scraping function and live dataframes
 
 def date_time_extractor(x):
     match = []
@@ -51,33 +51,39 @@ def parsePrice():
 
 thirty_days_of_prices = pd.DataFrame(columns = ['Time', 'OGZPY', 'XOM', 'PTR', 'RDS-A', 'BP', 'CVX', 'TOT', 'EQNR', 'COP', 'E'])
 
-def data_table_builder():
-    thirty_days_of_prices = thirty_days_of_prices.append(parsePrice())
-    thirty_days_of_prices.to_csv('price_data.csv')
-    gazprom_data = thirty_days_of_prices[['Time', 'OGZPY']].dropna()
-    gazprom_data.to_csv('gazprom_data.csv')
-    exxon_data = thirty_days_of_prices[['Time', 'XOM']].dropna()
-    exxon_data.to_csv('exxon_data.csv')
-    china_petrol_data = thirty_days_of_prices[['Time', 'PTR']].dropna()
-    china_petrol_data.to_csv('china_petrol_data.csv')
-    royal_dutch_shell_data = thirty_days_of_prices[['Time', 'RDS-A']].dropna()
-    royal_dutch_shell_data.to_csv('royal_dutch_shell_data.csv')
-    BP_data = thirty_days_of_prices[['Time', 'BP']].dropna()
-    BP_data.to_csv('BP_data.csv')
-    chevron_data = thirty_days_of_prices[['Time', 'CVX']].dropna()
-    chevron_data.to_csv('chevron_data.csv')
-    total_data = thirty_days_of_prices[['Time', 'TOT']].dropna()
-    total_data.to_csv('total_data.csv')
-    equinor_data = thirty_days_of_prices[['Time', 'EQNR']].dropna()
-    equinor_data.to_csv('equinor_data.csv')
-    cocono_phillips_data = thirty_days_of_prices[['Time', 'COP']].dropna()
-    cocono_phillips_data.to_csv('cocono_phillips_data.csv')
-    eni_data = thirty_days_of_prices[['Time', 'E']].dropna()
-    eni_data.to_csv('eni_data.csv')
+thirty_days_of_prices = thirty_days_of_prices.append(parsePrice())
+thirty_days_of_prices.to_csv('price_data.csv', mode='a', header=False)
 
+gazprom_data = thirty_days_of_prices[['Time', 'OGZPY']].dropna()
+gazprom_data.to_csv('gazprom_data.csv', mode='a', header=False)
 
-data_table_builder()    
-  
+exxon_data = thirty_days_of_prices[['Time', 'XOM']].dropna()
+exxon_data.to_csv('exxon_data.csv', mode='a', header=False)
+
+china_petrol_data = thirty_days_of_prices[['Time', 'PTR']].dropna()
+china_petrol_data.to_csv('china_petrol_data.csv', mode='a', header=False)
+
+royal_dutch_shell_data = thirty_days_of_prices[['Time', 'RDS-A']].dropna()
+royal_dutch_shell_data.to_csv('royal_dutch_shell_data.csv', mode='a', header=False)
+
+BP_data = thirty_days_of_prices[['Time', 'BP']].dropna()
+BP_data.to_csv('BP_data.csv', mode='a', header=False)
+
+chevron_data = thirty_days_of_prices[['Time', 'CVX']].dropna()
+chevron_data.to_csv('chevron_data.csv', mode='a', header=False)
+
+total_data = thirty_days_of_prices[['Time', 'TOT']].dropna()
+total_data.to_csv('total_data.csv', mode='a', header=False)
+
+equinor_data = thirty_days_of_prices[['Time', 'EQNR']].dropna()
+equinor_data.to_csv('equinor_data.csv', mode='a', header=False)
+
+cocono_phillips_data = thirty_days_of_prices[['Time', 'COP']].dropna()
+cocono_phillips_data.to_csv('cocono_phillips_data.csv', mode='a', header=False)
+
+eni_data = thirty_days_of_prices[['Time', 'E']].dropna()
+eni_data.to_csv('eni_data.csv', mode='a', header=False)
+
 # In[ ]:
 
 
