@@ -366,7 +366,7 @@ def update_output(selected_firm):
 
 # creates last thirty days price chart
     
-    df = pd.read_csv('Short_' + selected_firm + '.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/pmshea/oil-gas-project/master/' + 'Short_' + selected_firm + '.csv')
     thirty_days_chart = px.line(
                      data_frame = df, 
                      x='Date',
@@ -387,7 +387,7 @@ def update_output(selected_firm):
     
 # creates historical price chart
 
-    df2 = pd.read_csv(selected_firm + '.csv')
+    df2 = pd.read_csv('https://github.com/pmshea/oil-gas-project/blob/master/' + selected_firm + '.csv')
     historical_chart = px.area(
                      data_frame = df2,
                      x='Date',
