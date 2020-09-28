@@ -25,7 +25,9 @@ import dash_html_components as html
 
 # builds app layout
 
-app = dash.Dash(__name__)
+external_stylesheets=['https://raw.githubusercontent.com/pmshea/oil-gas-project/master/assets/bootstrap.min.css']
+
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 application = app.server
 
