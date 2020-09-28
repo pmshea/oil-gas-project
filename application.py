@@ -523,5 +523,5 @@ def update_output(selected_firm):
     return thirty_days_chart, ('$' + price + ' USD'), historical_chart, ('$' + sp_price + ' USD'), sp_change,          ('$' + dow_price + ' USD'), dow_change, ('$' + nasdaq_price + ' USD'), nasdaq_change,          ('$' + crude_price + ' USD'), crude_change, ('$' + gas_price + ' USD'), gas_change,          ('$' + djusen_price + ' USD'), djusen_change, ('$' + xop_price + ' USD'), xop_change,          ('$' + ieo_price + ' USD'), ieo_change, ('$' + pxe_price + ' USD'), pxe_change, sp_color, dow_color,          nasdaq_color, crude_color, gas_color, djusen_color, xop_color, ieo_color, pxe_color
 
 if __name__ == '__main__':
-    app.run_server(port=8084)
+    app.run_server()
 
